@@ -11,7 +11,7 @@ def llm_invoke(prompt, model_type: str):
     response = client.chat.completions.create(
             model=model_type,
             messages=prompt,
-            temperature=0,
+            temperature=1,
             max_tokens=1024
         ).choices[0].message.content
     
@@ -24,7 +24,7 @@ async def allm_invoke(prompt, model_type: str):
     response = await aclient.chat.completions.create(
             model=model_type,
             messages=prompt,
-            temperature=0,
+            temperature=1,
             max_tokens=1024
         )
     
