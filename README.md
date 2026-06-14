@@ -167,14 +167,6 @@ python main_defense_for_different_topology1.py \
 # Repeat for chain / tree / star and other defend_type values
 ```
 
-Example pretrained checkpoints (see `checkpoint/` and `checkpoint_un2/`):
-
-| Dataset | G-Safeguard | Dominant | TAM | PREM | SCL |
-|---------|-------------|----------|-----|------|-----|
-| MMLU | `checkpoint/mmlu/20250701_210222-...` | `checkpoint_un2/mmlu/20250701_173128-...` | `20250701_173149-...` | `20250731_021000-...` | `20250701_213613-...` |
-| CSQA | `checkpoint/csqa/20250628_211041-...` | `checkpoint_un2/csqa/20250628_211052-...` | `20250628_211102-...` | `20250731_233221-...` | `20250701_181329-...` |
-| GSM8K | `checkpoint/gsm8k/20250624_174056-...` | `checkpoint_un2/gsm8k/20250701_175450-...` | `20250701_175505-...` | `20250731_233811-...` | `20250701_143107-...` |
-
 ---
 
 ## MA — Memory Attack
