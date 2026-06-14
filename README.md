@@ -249,14 +249,18 @@ bash scripts/test/gen_conversation_test.sh && python merge_datasets.py --phase t
 
 python gen_training_dataset.py
 python train.py --epochs 50 --batch_size 32 --lr 0.001
+python train_un1.py --epochs 50 --batch_size 1 --lr 0.001 --defend_type SCL --weight_decay 1e-5 --rep_type 2
 
 python main_defense_for_different_topology.py \
   --graph_type random \
   --gnn_checkpoint_path ./checkpoint/tool_attack/20250701_215131-hiddim_1024-heads_8-layers_2-epochs_50-lr_0.001-dropout_0.2-wd_0.0002.pth \
   --model_type gpt-4o-mini --topk 3
-```
 
-Unsupervised defenses follow the same pattern as `MA/` with `train_un1.py` / `train_un2.py` and `main_defense_for_different_topology1.py`.
+python main_defense_for_different_topology1.py  \
+  --graph_type random \
+  --gnn_checkpoint_path ./checkpoint_un2/tool_attack/20260607_225353-defend_type_SCL-hiddim_1024-heads_8-layers_2-epochs_50-lr_0.001-dropout_0.2-wd_1e-05_rep_type_2.pth \
+  --model_type gpt-4o-mini --samples 60 --defend_type SCL --topk 3 --rep_type 2
+```
 
 ---
 
