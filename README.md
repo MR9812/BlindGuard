@@ -62,8 +62,6 @@ Evaluation runs under four topologies: `random` (adjacency from data), `chain`, 
 | PREM | `train_un2.py` | `main_defense_for_different_topology1.py` | PREM-GAD |
 | SCL | `train_un1.py` | `main_defense_for_different_topology1.py` | Contrastive learning |
 
-Default evaluation uses `topk=3` (mark 3 of 8 agents as attackers).
-
 ---
 
 ## PI — Prompt Injection (MMLU / CSQA / GSM8K)
