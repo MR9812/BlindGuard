@@ -293,17 +293,3 @@ with open("./result/mmlu/random/your_result.json") as f:
 print("ASR per turn:", cal_wrong(data, answer_type="choice"))
 print("Mean AUROC:", cal_mean_AUROC(data))
 ```
-
-`cal_wrong` returns a list of per-turn wrong-answer rates (ASR). The last turn is typically reported.
-
-No-defense baseline: use JSON files named `no_defense-*.json` (generated with `--get_no_defense True`).
-
-You can also edit the `__main__` block in `evaluate_output.py` for batch reporting.
-
-## Uploading Checkpoints to GitHub
-
-```powershell
-powershell -ExecutionPolicy Bypass -File push_checkpoints_and_scripts.ps1
-```
-
-This script copies `checkpoint/`, `checkpoint_un2/`, and `scripts/` from each module and pushes to [github.com/MR9812/BlindGuard](https://github.com/MR9812/BlindGuard).
