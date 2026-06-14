@@ -70,8 +70,6 @@ Default evaluation uses `topk=3` (mark 3 of 8 agents as attackers).
 
 Run all commands from `PI/`.
 
-> **CSQA note:** the official test split has no labels; evaluation samples from the **validation** split (`gen_csqa.py`).
-
 ### 1. Data Generation
 
 **Train dialogues:**
