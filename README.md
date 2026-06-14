@@ -104,8 +104,6 @@ python gen_training_dataset.py --dataset csqa --type unsuper
 python gen_training_dataset.py --dataset gsm8k --type unsuper
 
 # Supervised G-Safeguard (copy train → train1 first)
-mkdir -p agent_graph_dataset/mmlu/train1
-cp agent_graph_dataset/mmlu/train/dataset.json agent_graph_dataset/mmlu/train1/dataset.json
 python gen_training_dataset.py --dataset mmlu --type super
 # Repeat for csqa / gsm8k
 
@@ -194,8 +192,6 @@ python merge_datasets.py --phase train
 python merge_datasets.py --phase test
 
 python gen_training_dataset.py --type unsuper
-mkdir -p agent_graph_dataset/memory_attack/train1
-cp agent_graph_dataset/memory_attack/train/dataset.json agent_graph_dataset/memory_attack/train1/dataset.json
 python gen_training_dataset.py --type super
 python gen_training_dataset.py --type test
 ```
