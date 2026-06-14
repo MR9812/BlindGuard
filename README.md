@@ -60,7 +60,7 @@ Evaluation runs under four topologies: `random` (adjacency from data), `chain`, 
 | Dominant | `train_un2.py` | `main_defense_for_different_topology1.py` | Graph autoencoder |
 | TAM | `train_un2.py` | `main_defense_for_different_topology1.py` | TAM anomaly detection |
 | PREM | `train_un2.py` | `main_defense_for_different_topology1.py` | PREM-GAD |
-| SCL | `train_un1.py` | `main_defense_for_different_topology1.py` | Contrastive learning |
+| BlindGuard | `train_un1.py` | `main_defense_for_different_topology1.py` | Contrastive learning |
 
 ---
 
@@ -107,7 +107,7 @@ python gen_training_dataset.py --dataset gsm8k --type unsuper
 python gen_training_dataset.py --dataset mmlu --type super
 # Repeat for csqa / gsm8k
 
-# Test embeddings (SCL validation)
+# Test embeddings (BlindGuard validation)
 python gen_training_dataset.py --dataset mmlu --type test
 python gen_training_dataset.py --dataset csqa --type test
 python gen_training_dataset.py --dataset gsm8k --type test
@@ -133,7 +133,7 @@ python train_un2.py --dataset mmlu --epochs 50 --batch_size 32 --lr 0.001 --defe
 python train_un2.py --dataset mmlu --epochs 50 --batch_size 32 --lr 0.001 --defend_type PREM
 # Repeat --dataset csqa / gsm8k
 
-# SCL
+# BlindGuard
 python train_un1.py --dataset mmlu --epochs 100 --batch_size 1 --lr 0.001 --defend_type SCL --weight_decay 1e-4
 python train_un1.py --dataset csqa --epochs 20 --batch_size 1 --lr 0.001 --defend_type SCL --weight_decay 1e-4
 python train_un1.py --dataset gsm8k --epochs 100 --batch_size 1 --lr 0.001 --defend_type SCL --weight_decay 5e-5
@@ -156,7 +156,7 @@ python main_defense_for_different_topology.py \
 # Repeat for graph_type: chain, tree, star
 ```
 
-**Dominant / TAM / PREM / SCL** — `main_defense_for_different_topology1.py` (GSM8K: `main_defense_for_different_topology1_gsm8k.py`):
+**Dominant / TAM / PREM / BlindGuard** — `main_defense_for_different_topology1.py` (GSM8K: `main_defense_for_different_topology1_gsm8k.py`):
 
 ```bash
 CKPT=./checkpoint_un2/mmlu/20250701_173128-defend_type_Dominant-hiddim_1024-latent_512-heads_8-layers_2-epochs_50-lr_0.001-temp_0.1.pth
