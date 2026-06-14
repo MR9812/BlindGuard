@@ -24,7 +24,7 @@ BlindGuard models multi-agent LLM communication as a directed graph and trains g
 | `MA_CSQA/` | Memory attack | Commonsense QA |
 | `TA/` | Tool attack | InjecAgent-style tool misuse |
 
-Each module shares a similar layout: `agents.py`, `train.py` (supervised G-Safeguard GAT), `train_un1.py` / `train_un2.py` (unsupervised defenses), `main_defense_for_different_topology*.py` (evaluation), and `evaluate_output.py` (ASR / AUROC).
+Each module shares a similar layout: `agents.py`, `train.py` (supervised G-Safeguard), `train_un1.py` / `train_un2.py` (unsupervised defenses), `main_defense_for_different_topology*.py` (evaluation), and `evaluate_output.py` (ASR / AUROC).
 
 Pretrained weights live in `checkpoint/` and `checkpoint_un2/`. Data-generation shell scripts are in `scripts/`.
 
@@ -36,8 +36,6 @@ pip install torch torch-geometric torch-scatter einops sentence-transformers ope
 export OPENAI_API_KEY="your_key"
 export BASE_URL="your_openai_compatible_base_url"
 ```
-
-Update `embedding_model_dir` in each `gen_training_dataset.py` to point to your local `all-MiniLM-L6-v2` SentenceTransformer path.
 
 ## General Workflow
 
@@ -58,7 +56,7 @@ Evaluation runs under four topologies: `random` (adjacency from data), `chain`, 
 
 | Method | Train | Evaluate | Notes |
 |--------|-------|----------|-------|
-| G-Safeguard | `train.py` | `main_defense_for_different_topology.py` | Supervised GAT; uses `dataset1.pkl` |
+| G-Safeguard | `train.py` | `main_defense_for_different_topology.py` | Supervised |
 | Dominant | `train_un2.py` | `main_defense_for_different_topology1.py` | Graph autoencoder |
 | TAM | `train_un2.py` | `main_defense_for_different_topology1.py` | TAM anomaly detection |
 | PREM | `train_un2.py` | `main_defense_for_different_topology1.py` | PREM-GAD |
