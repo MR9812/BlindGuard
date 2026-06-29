@@ -7,10 +7,11 @@ BlindGuard models multi-agent LLM communication as a directed graph and trains g
 ## Citation
 
 ```bibtex
-@inproceedings{miao2026BlindGuard,
-  title={BlindGuard: Safeguarding LLM-based Multi-Agent Systems under Unknown Attacks},
+@inproceedings{miao2026blindguard,
+  title={Blindguard: Safeguarding llm-based multi-agent systems under unknown attacks},
   author={Miao, Rui and Liu, Yixin and Wang, Yili and Shen, Xu and Tan, Yue and Dai, Yiwei and Pan, Shirui and Wang, Xin},
-  journal={Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics},
+  booktitle={Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages={39215--39234},
   year={2026}
 }
 ```
