@@ -286,3 +286,6 @@ with open("./result/mmlu/random/your_result.json") as f:
 print("ASR per turn:", cal_wrong(data, answer_type="choice"))
 print("Mean AUROC:", cal_mean_AUROC(data))
 ```
+
+## Acknowledgement
+This code refers to [G-Safeguard](https://github.com/wslong20/G-safeguard).
